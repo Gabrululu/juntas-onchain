@@ -1,12 +1,10 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useContractRead, useWriteContract } from 'wagmi';
 import { formatEther } from 'viem';
 import JuntaABI from '../../lib/abi/Junta.json';
 import toast from 'react-hot-toast';
-import { createPublicClient, http } from 'viem';
-import { sepolia } from 'viem/chains';
 
 interface JuntaItemProps {
   direccion: string;
@@ -38,7 +36,7 @@ export default function JuntaItem({ direccion, onActionComplete }: JuntaItemProp
   });
 
   // Unirse
-  const { writeContract: writeUnirse, isPending: loadingUnirse, isSuccess: successUnirse, error: errorUnirse } = useWriteContract({
+  const { writeContract: writeUnirse, isPending: loadingUnirse } = useWriteContract({
     mutation: {
       onSuccess: () => {
         toast.success('¡Te has unido a la junta!');
@@ -52,7 +50,7 @@ export default function JuntaItem({ direccion, onActionComplete }: JuntaItemProp
   });
 
   // Depositar
-  const { writeContract: writeDepositar, isPending: loadingDepositar, isSuccess: successDepositar, error: errorDepositar } = useWriteContract({
+  const { writeContract: writeDepositar, isPending: loadingDepositar } = useWriteContract({
     mutation: {
       onSuccess: () => {
         toast.success('¡Cuota depositada con éxito!');
@@ -81,11 +79,6 @@ export default function JuntaItem({ direccion, onActionComplete }: JuntaItemProp
       : estadoData === 2
       ? 'Finalizada'
       : 'Cargando...';
-
-  const client = createPublicClient({
-    chain: sepolia,
-    transport: http('https://eth-sepolia.g.alchemy.com/v2/kCBdnDohh6bwHoVB3zYLFAHh5XYeBMUd'),
-  });
 
   return (
     <li className="break-words mb-6 p-4 border rounded-lg shadow bg-white dark:bg-gray-800 transition-colors">
@@ -144,8 +137,8 @@ export default function JuntaItem({ direccion, onActionComplete }: JuntaItemProp
 
 declare global {
   interface Window {
-    viem: any;
-    JuntaFactoryABI: any;
+    viem: unknown;
+    JuntaFactoryABI: unknown;
   }
 }
 

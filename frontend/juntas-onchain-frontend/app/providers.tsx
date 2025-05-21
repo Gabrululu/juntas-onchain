@@ -4,7 +4,6 @@ import { WagmiConfig, createConfig, http } from 'wagmi';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { injected } from 'wagmi/connectors';
 import { useConnect, useAccount, useDisconnect } from 'wagmi';
-import { authConnector } from '@reown/appkit-adapter-wagmi';
 
 const queryClient = new QueryClient();
 
@@ -59,12 +58,6 @@ const config = createConfig({
   },
   connectors: [
     injected(),
-    authConnector({
-      chains: [sepolia, baseSepolia, mantleSepolia],
-      options: {
-        projectId: '03743b74014c39f05e63db875fecce3e',
-      },
-    }),
   ],
 });
 
@@ -112,16 +105,4 @@ export function WalletButton() {
     </div>
   );
 }
-
-const handleThemeToggle = () => {
-  const root = window.document.documentElement;
-  const isDark = root.classList.contains('dark');
-  if (isDark) {
-    root.classList.remove('dark');
-    localStorage.setItem('theme', 'light');
-  } else {
-    root.classList.add('dark');
-    localStorage.setItem('theme', 'dark');
-  }
-};
 

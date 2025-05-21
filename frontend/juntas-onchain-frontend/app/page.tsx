@@ -21,15 +21,13 @@ import { JUNTA_FACTORY_ADDRESS } from '../lib/constants';
 import JuntaFactoryABI from '../lib/abi/JuntaFactory.json';
 import { parseEther } from 'viem';
 
-import ImageSvg from './svg/Image';
-import OnchainkitSvg from './svg/OnchainKit';
 import JuntaItem from './components/JuntaItem';
 import toast from 'react-hot-toast';
 
 declare global {
   interface Window {
-    viem: any;
-    JuntaFactoryABI: any;
+    viem: unknown;
+    JuntaFactoryABI: unknown;
   }
 }
 
