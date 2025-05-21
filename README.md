@@ -129,7 +129,11 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE.md](LICENSE.m
 ## 📞 Contacto
 
 - Sitio Web: [juntas-onchain.com](https://juntas-onchain.com) (pendiente)
+<<<<<<< HEAD
 - X: [@gabrululu]
+=======
+- X: [@gabrululu)
+>>>>>>> 620d7cf8b056f6ffc96f035c64cc9cc283d90b56
 
 ---
 
