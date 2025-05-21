@@ -1,0 +1,37 @@
+{
+  "name": "juntas-onchain",
+  "version": "1.0.0",
+  "private": true,
+  "description": "**Juntas Onchain** es un sistema de ahorro comunitario basado en contratos inteligentes que digitaliza las tradicionales \"juntas\" peruanas (también conocidas como ROSCAs o panderos), ofreciendo seguridad, transparencia y recompensas gracias a Web3.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cd frontend/juntas-onchain-frontend && npm run dev",
+    "build": "cd frontend/juntas-onchain-frontend && npm run build",
+    "start": "cd frontend/juntas-onchain-frontend && npm run start",
+    "lint": "cd frontend/juntas-onchain-frontend && npm run lint",
+    "install:frontend": "cd frontend/juntas-onchain-frontend && npm install",
+    "install:all": "npm install && npm run install:frontend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.24.0"
+  },
+  "dependencies": {
+    "@reown/appkit": "^1.7.6",
+    "@reown/appkit-adapter-wagmi": "^1.7.6",
+    "@tanstack/react-query": "^5.76.1",
+    "@walletconnect/core": "^2.20.2",
+    "@walletconnect/utils": "^2.20.2",
+    "dotenv": "^16.5.0",
+    "ethers": "^6.14.1",
+    "viem": "^2.29.4",
+    "wagmi": "^2.15.4"
+  },
+  "workspaces": [
+    "frontend/juntas-onchain-frontend"
+  ]
+}
