@@ -114,8 +114,7 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE.md](LICENSE.m
 ## 📞 Contacto
 
 - Sitio Web: [juntas-onchain.com](https://juntas-onchain.com) (pendiente)
-- Twitter: [@JuntasOnchain](https://twitter.com/JuntasOnchain)
-- Email: contacto@juntas-onchain.com
+- X: [@gabrululu)
 
 ---
 
