@@ -71,13 +71,19 @@ npm install
 # 3. Configurar variables de entorno
 cp .env.example .env
 # Editar .env con tus credenciales:
+# - NEXT_PUBLIC_ALCHEMY_SEPOLIA_URL=tu-url-de-alchemy-sepolia
+# - NEXT_PUBLIC_ALCHEMY_BASE_SEPOLIA_URL=tu-url-de-alchemy-base-sepolia
+# - NEXT_PUBLIC_ALCHEMY_MANTLE_SEPOLIA_URL=tu-url-de-alchemy-mantle-sepolia
 # - PRIVATE_KEY=tu_clave_privada
-# - SEPOLIA_RPC_URL=tu_url_rpc
 # - ETHERSCAN_API_KEY=tu_api_key
+
+# ⚠️ IMPORTANTE: Nunca subas el archivo .env a GitHub
+# Asegúrate de que .env esté en tu .gitignore
 ```
 
 ## 🚀 Despliegue
 
+### Despliegue Local
 ```bash
 # 1. Compilar contratos
 npx hardhat compile
@@ -88,6 +94,15 @@ npx hardhat test
 # 3. Desplegar en Sepolia
 npx hardhat run scripts/deploy.js --network sepolia
 ```
+
+### Despliegue en Vercel
+1. Asegúrate de que las variables de entorno estén configuradas en el panel de Vercel:
+   - NEXT_PUBLIC_ALCHEMY_SEPOLIA_URL
+   - NEXT_PUBLIC_ALCHEMY_BASE_SEPOLIA_URL
+   - NEXT_PUBLIC_ALCHEMY_MANTLE_SEPOLIA_URL
+2. Conecta tu repositorio de GitHub con Vercel
+3. Configura el directorio raíz como `frontend/juntas-onchain-frontend`
+4. ¡Despliega!
 
 ## 📖 Uso
 
@@ -114,8 +129,7 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE.md](LICENSE.m
 ## 📞 Contacto
 
 - Sitio Web: [juntas-onchain.com](https://juntas-onchain.com) (pendiente)
-- Twitter: [@JuntasOnchain](https://twitter.com/JuntasOnchain)
-- Email: contacto@juntas-onchain.com
+- X: [@gabrululu]
 
 ---
 
